@@ -76,13 +76,6 @@ plugins:
   - search
   - typeset
 
-  # CI=1 mkdocs build
-  - group:
-      enabled: !ENV CI
-      plugins:
-        - git-revision-date-localized
-        - git-committers
-
   # INSIDERS=1 mkdocs build
   - group:
       enabled: !ENV INSIDERS
