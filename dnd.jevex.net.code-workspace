@@ -1,0 +1,52 @@
+{
+    "folders": [
+        {
+            "path": "."
+        }
+    ],
+    "settings": {
+        "python.analysis.packageIndexDepths": [
+            {
+                "name": "mkdocs",
+                "depth": 3
+            }
+        ],
+        "python.analysis.typeCheckingMode": "strict"
+    },
+    "tasks": {
+        "version": "2.0.0",
+        "tasks": [
+            {
+                "label": "MKDocs Serve",
+                "group": "build",
+                "icon": {
+                    "id": "issue-reopened",
+                    "color": "terminal.ansiWhite"
+                },
+                "type": "process",
+                "command": "poetry",
+                "args": ["run", "mkdocs", "serve"],
+                "problemMatcher": [],
+                "presentation": {
+                    "reveal": "always"
+                }
+            },
+            {
+                "label": "MKDocs Serve (Insiders)",
+                "group": "build",
+                "icon": {
+                    "id": "issue-reopened",
+                    "color": "terminal.ansiWhite"
+                },
+                "type": "process",
+                "command": "poetry",
+                "args": ["run", "mkdocs", "serve"],
+                "problemMatcher": [],
+                "presentation": {
+                    "reveal": "always"
+                },
+                "options": { "env": { "INSIDERS": "true" } }
+            }
+        ]
+    }
+}

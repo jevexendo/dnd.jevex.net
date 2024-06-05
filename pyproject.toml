@@ -1,0 +1,32 @@
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry]
+name = "mkdnd"
+version = "0.1.0"
+description = "D&D MkDocs Plugin"
+authors = ["Jevex <jevexendo@gmail.com>"]
+readme = "README.md"
+packages = [{ include = "mkdnd", from = "src" }]
+
+[tool.poetry.plugins."mkdocs.plugins"]
+mkdnd = "mkdnd:DungeonsPlugin"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+
+[tool.poetry.group.dev.dependencies]
+ruff = "^0.4.7"
+
+[tool.poetry.group.insiders]
+optional = true
+
+[tool.poetry.group.insiders.dependencies]
+mkdocs-material = { git = "git@github.com:mcmeta/mkdocs-material-insiders.git", tag = "9.5.24-insiders-4.53.10" }
+
+[tool.ruff]
+line-length = 100
+
+[tool.ruff.lint.isort]
+required-imports = ["from __future__ import annotations"]
